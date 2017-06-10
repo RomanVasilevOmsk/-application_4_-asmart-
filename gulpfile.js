@@ -46,6 +46,12 @@ gulp.task('browserSync', function() {
   });
 });
 
+gulp.task('tinypng', function () {
+    gulp.src('commons/images/**/*')
+        .pipe(tingpng('sHYF22n0Q3Cq55ie_Gl6ofCc1HsYcKoV'))
+        .pipe(gulp.dest('commons/images'));
+});
+
 gulp.task('watcher',function(){
   gulp.watch(paths.css, ['css']);
   gulp.watch(paths.script, ['scripts']);
