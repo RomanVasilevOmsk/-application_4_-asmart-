@@ -1,5 +1,6 @@
 
 
+
 $max-width-lg: 1090px;
 $max-width-md: 1010px;
 $max-width-sm: 850px;
@@ -162,6 +163,12 @@ body {
             }
           }
         }
+    }
+    #top-slider {
+      background: url("../images/slider-top-background.jpg") 50% 0 no-repeat fixed;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
     }
     .category-block {
 
