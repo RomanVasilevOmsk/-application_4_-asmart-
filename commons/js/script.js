@@ -1,3 +1,5 @@
+
+// Mobile menu
 /* Открытие меню */
 var main = function() { //главная функция
     $('.icon-menu').click(function() { //выбираем класс icon-menu и добавляем метод click с функцией, вызываемой при клике
@@ -25,4 +27,8 @@ var main = function() { //главная функция
 
 $(document).ready(main); //как только страница полностью загрузится, будет вызвана функция main, отвечающая за работу меню
 
-    
+
+// Carousel
+$(document).ready(function() {
+    $('#liquid1').liquidcarousel({height:380, duration:100, hidearrows:false});
+});
