@@ -80,70 +80,15 @@ $(document).ready(function(){
 });
 
 // Carousel
-$(document).ready(function() {
-    $('#liquid1').liquidcarousel({height:380, duration:100, hidearrows:false});
-});
-
-$(document).ready(function() {
-    $('#liquid2').liquidcarousel({height:380, duration:100, hidearrows:false});
-});
-
-
-
-$(window).load(function() {
-    $("#flexiselDemo1").flexisel();
-
-    $("#flexiselDemo2").flexisel({
-        visibleItems: 4,
-        itemsToScroll: 3,
-        animationSpeed: 200,
-        infinite: true,
-        navigationTargetSelector: null,
-        autoPlay: {
-            enable: false,
-            interval: 5000,
-            pauseOnHover: true
-        },
-        responsiveBreakpoints: {
-            portrait: {
-                changePoint:480,
-                visibleItems: 1,
-                itemsToScroll: 1
-            },
-            landscape: {
-                changePoint:640,
-                visibleItems: 2,
-                itemsToScroll: 2
-            },
-            tablet: {
-                changePoint:768,
-                visibleItems: 3,
-                itemsToScroll: 3
-            }
-        },
-        loaded: function(object) {
-            console.log('Slider loaded...');
-        },
-        before: function(object){
-            console.log('Before transition...');
-        },
-        after: function(object) {
-            console.log('After transition...');
-        }
+$(function(){
+    $('.crsl-items').carousel({
+        visible: 3,
+        itemMinWidth: 300,
+        itemEqualHeight: 370,
+        itemMargin: 9,
     });
 
-    $("#flexiselDemo3").flexisel({
-        visibleItems: 3,
-        itemsToScroll: 1,
-        autoPlay: {
-            enable: true,
-            interval: 5000,
-            pauseOnHover: true
-        }
+    $("a[href=#]").on('click', function(e) {
+        e.preventDefault();
     });
-
-    $("#flexiselDemo4").flexisel({
-        infinite: false
-    });
-
 });
