@@ -79,16 +79,21 @@ $(document).ready(function(){
     });
 });
 
-// Carousel
-$(function(){
-    $('.crsl-items').carousel({
-        visible: 3,
-        itemMinWidth: 300,
-        itemEqualHeight: 370,
-        itemMargin: 9,
-    });
 
-    $("a[href=#]").on('click', function(e) {
-        e.preventDefault();
+
+$(function() {
+    $('#third').carouseller({
+        // scrollSpeed: 3000,
+        // autoScrollDelay: 1600,
+        easing: 'linear'
     });
 });
+
+$(function() {
+    $('#third2').carouseller({
+        // scrollSpeed: 3000,
+        // autoScrollDelay: 1600,
+        easing: 'linear'
+    });
+});
+

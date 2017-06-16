@@ -7,7 +7,7 @@ var minify = require('gulp-minify');
 
 var paths = {
   html:['index.html'],
-  css:['commons/css/style.scss'],
+  css:['commons/css/*.scss'],
   script:['commons/js/script.js']
 };
 
