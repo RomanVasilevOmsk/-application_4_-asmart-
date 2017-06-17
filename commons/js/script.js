@@ -80,7 +80,7 @@ $(document).ready(function(){
 });
 
 
-
+//carouseller
 $(function() {
     $('#third').carouseller({
         // scrollSpeed: 3000,
@@ -97,3 +97,43 @@ $(function() {
     });
 });
 
+$(function() {
+    $('#third3').carouseller({
+        // scrollSpeed: 3000,
+        // autoScrollDelay: 1600,
+        easing: 'linear'
+    });
+});
+
+//carousel-works
+$(function() {
+
+    $( '#ri-grid' ).gridrotator( {
+        rows : 3,
+        columns : 4,
+        w1024 : {
+            rows : 3,
+            columns : 4
+        },
+        w768 : {
+            rows : 3,
+            columns : 4
+        },
+        w480 : {
+            rows : 3,
+            columns : 4
+        },
+        w320 : {
+            rows : 3,
+            columns : 4
+        },
+        w240 : {
+            rows : 3,
+            columns : 4
+        },
+        
+    } );
+
+});
+
+$('body').flipLightBox()
