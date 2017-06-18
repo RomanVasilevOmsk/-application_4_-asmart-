@@ -104,6 +104,13 @@ $(function() {
         easing: 'linear'
     });
 });
+$(function() {
+    $('#third4').carouseller({
+        // scrollSpeed: 3000,
+        // autoScrollDelay: 1600,
+        easing: 'linear'
+    });
+});
 
 //carousel-works
 $(function() {
