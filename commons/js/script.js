@@ -1,70 +1,43 @@
 
 // Parallax
 $(document).ready(function(){
-    // Кешируем объект окна
     $window = $(window);
-
     $('section[data-type="background"]').each(function(){
         var $bgobj = $(this); // Назначаем объект
-
         $(window).scroll(function() {
-
-            // Прокручиваем фон со скоростью var.
-            // Значение yPos отрицательное, так как прокручивание осуществляется вверх!
             var yPos = -($window.scrollTop() / $bgobj.data('speed'));
-
-            // Размещаем все вместе в конечной точке
             var coords = '50% '+ yPos + 'px';
-
-            // Смещаем фон
             $bgobj.css({ backgroundPosition: coords });
-
         });
-
     });
 
 });
-/*
- * Создаем элементы HTML5 для IE
- */
-
 document.createElement("article");
 document.createElement("section");
 
 
 // Mobile menu
 /* Открытие меню */
-var main = function() { //главная функция
-    $('.icon-menu').click(function() { //выбираем класс icon-menu и добавляем метод click с функцией, вызываемой при клике
-        $('.menu').animate({ //выбираем класс menu и метод animate
-            left: '0px' //теперь при клике по иконке, меню, скрытое за левой границей на 285px, изменит свое положение на 0px и станет видимым
-        }, 200); //скорость движения меню в мс
+var main = function() {
+    $('.icon-menu').click(function() {
+        $('.menu').animate({left: '0px'}, 200);
         $('.icon-menu').css({'display' : 'none!important'});
-        $('body').animate({ //выбираем тег body и метод animate
-            left: '100%' //чтобы всё содержимое также сдвигалось вправо при открытии меню, установим ему положение 285px
-        }, 200); //скорость движения меню в мс
+        $('body').animate({left: '100%'}, 200);
     });
 
 
     /* Закрытие меню */
     $('.icon-close,.top-slider-close, .services-close, .shop-close, .portfolio-close, .cooperation-close, .reviews-close, .contacts-close').click(function() { //выбираем класс icon-close и метод click
-        $('.menu').animate({ //выбираем класс menu и метод animate
-            left: '-100%' //при клике на крестик меню вернется назад в свое положение и скроется
-        }, 200); //скорость движения меню в мс
-
-        $('body').animate({ //выбираем тег body и метод animate
-            left: '0px' //а содержимое страницы снова вернется в положение 0px
-        }, 200); //скорость движения меню в мс
+        $('.menu').animate({left: '-100%'}, 200);
+        $('body').animate({left: '0px'}, 200);
     });
 };
-
-$(document).ready(main); //как только страница полностью загрузится, будет вызвана функция main, отвечающая за работу меню
-
+$(document).ready(main);
 
 
 //Якорь
 $(document).ready(function(){
-    $("#menu").on("click","a", function (event) {
+    $("#menu, #menu-bottom, #menuscroll, .toggleclass").on("click","a", function (event) {
         //отменяем стандартную обработку нажатия по ссылке
         event.preventDefault();
 
@@ -143,4 +116,29 @@ $(function() {
 
 });
 
+//Открыть галерею
 $('body').flipLightBox()
+
+
+//modal window
+jQuery(function ($) {
+    // Load dialog on page load
+    //$('#basic-modal-content').modal();
+
+    // Load dialog on click
+    $('.basic').click(function (e) {
+        $('#basic-modal-content').modal();
+
+        return false;
+    });
+});
+
+
+//Переключатель "Посмотреть все товары"
+jQuery(function ($) {
+    $( ".toggleclass" ).on( "click", function() {
+        event.preventDefault();
+        $(".order-products-block_all-products").fadeIn().css("display", "block");
+        $(".order-products-block-carousel").fadeOut().css("display", "none");
+    });
+});

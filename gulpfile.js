@@ -4,6 +4,14 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var reload      = browserSync.reload;
 var minify = require('gulp-minify');
+var tinypng = require('gulp-tinypng');
+
+
+gulp.task('tinypng', function () {
+    gulp.src('commons/images/**/*')
+        .pipe(tinypng('sHYF22n0Q3Cq55ie_Gl6ofCc1HsYcKoV'))
+        .pipe(gulp.dest('commons/images'));
+});
 
 var paths = {
   html:['index.html'],
@@ -46,11 +54,7 @@ gulp.task('browserSync', function() {
   });
 });
 
-gulp.task('tinypng', function () {
-    gulp.src('commons/images/**/*')
-        .pipe(tingpng('sHYF22n0Q3Cq55ie_Gl6ofCc1HsYcKoV'))
-        .pipe(gulp.dest('commons/images'));
-});
+
 
 gulp.task('watcher',function(){
   gulp.watch(paths.css, ['css']);
