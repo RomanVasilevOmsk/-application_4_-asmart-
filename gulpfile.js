@@ -5,7 +5,16 @@ var minifyCss = require('gulp-minify-css');
 var reload      = browserSync.reload;
 var minify = require('gulp-minify');
 var tinypng = require('gulp-tinypng');
+var autoprefixer = require('gulp-autoprefixer');
 
+gulp.task('autoprefixertask2', function () {
+    return gulp.src('commons/css/style.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('commons/css'));
+});
 
 gulp.task('tinypng', function () {
     gulp.src('commons/images/**/*')
